@@ -2,13 +2,14 @@ import "./App.css";
 import SearchForm from "./SearchForm";
 import Footer from "./Footer";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <SearchForm />
-      <Footer />
+      <div className="container">
+        <h1>Weather App</h1>
+        <SearchForm />
+        <Footer />
+      </div>
     </div>
   );
 }
-
-export default App;

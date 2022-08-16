@@ -3,7 +3,7 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <div className="Footer mt-5">
+    <footer className="Footer mt-5">
       <a
         href="https://github.com/kseniia-chepur/weather-app-react"
         target="_blank"
@@ -12,6 +12,6 @@ export default function Footer() {
         Open-source code
       </a>
       <span> by Kseniia Chepur</span>
-    </div>
+    </footer>
   );
 }
