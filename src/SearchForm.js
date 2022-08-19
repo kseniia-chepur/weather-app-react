@@ -7,7 +7,6 @@ export default function SearchForm(props) {
   const [weatherData, setWeatherData] = useState({ status: false });
 
   function getWeatherForecast(response) {
-    console.log(response);
     setWeatherData({
       status: true,
       city: response.data.name,
@@ -22,9 +21,8 @@ export default function SearchForm(props) {
   }
   function searchByCity() {
     let units = "metric";
-    let apiKey = "9f2e2f52f885114eaafb1054b63cf92c";
+    const apiKey = "9f2e2f52f885114eaafb1054b63cf92c";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-    console.log(url);
     axios.get(url).then(getWeatherForecast);
   }
 
@@ -37,7 +35,7 @@ export default function SearchForm(props) {
     setCity(event.target.value);
   }
 
-  if (weatherData.status) {
+  if (weatherData.status)
     return (
       <div>
         <form className="my-5" onSubmit={handleSubmit}>
@@ -53,8 +51,6 @@ export default function SearchForm(props) {
         <Weather data={weatherData} />
       </div>
     );
-  } else {
-    searchByCity();
-    return "Loading";
-  }
+  else searchByCity();
+  return "Loading";
 }

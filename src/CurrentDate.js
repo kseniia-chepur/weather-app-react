@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function CurrentDate(props) {
-  console.log(props.date);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let months = [
     "Jan",
@@ -21,5 +20,9 @@ export default function CurrentDate(props) {
   let date = props.date.getDate();
   let month = months[props.date.getMonth()];
 
-  return <div className="CurrentDate">{day} {date} {month}</div>;
+  return (
+    <div className="CurrentDate">
+      {day} {date} {month}
+    </div>
+  );
 }
