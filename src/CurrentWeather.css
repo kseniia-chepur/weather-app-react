@@ -1,0 +1,18 @@
+.CurrentWeather ul {
+  list-style: none;
+  padding: 0;
+}
+
+.CurrentWeather .values-icon {
+  max-width: 40px;
+  /* margin-right: -8px; */
+}
+
+.CurrentWeather .humidity {
+  line-height: 2;
+}
+
+.CurrentWeather .wind {
+  line-height: 1;
+  
+}

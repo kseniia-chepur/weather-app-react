@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Temperature.css";
 
 export default function Temperature(props) {
   const [unit, setUnit] = useState("celsius");
@@ -23,39 +24,37 @@ export default function Temperature(props) {
   if (unit === "celsius")
     return (
       <div className="Temperature">
-        <li>
-          <span className="temperature">{props.celsius}</span>
-          <span className="temperature-units">
-            {" "}
+        <div className="mt-2">
+          <span className="current-value">{props.celsius}</span>
+          <span className="units">
             °C |
             <a href="/" onClick={displayFahrenheit}>
+              {" "}
               F
             </a>
           </span>
-        </li>
-        <li>
-          <i class="fa-solid fa-temperature-half"></i>RealFeels{" "}
-          {props.realFeels}
-        </li>
+        </div>
+        <div className="mt-4">
+          Feels like <strong>{props.realFeels}°</strong>
+        </div>
       </div>
     );
   else
     return (
       <div className="Temperature">
-        <li>
-          <span className="temperature">{convertToFahrenheit()}</span>
-          <span className="temperature-units">
+        <div className="mt-2">
+          <span className="current-value">{convertToFahrenheit()}</span>
+          <span className="units">
             °
             <a href="/" onClick={displayCelsius}>
               C
-            </a>
-            |F
+            </a>{" "}
+            | F
           </span>
-        </li>
-        <li>
-          <i class="fa-solid fa-temperature-half"></i>RealFeels{" "}
-          {convertToFahrenheitRealFeels()}
-        </li>
+        </div>
+        <div className="mt-4">
+          Feels like <strong>{convertToFahrenheitRealFeels()}°</strong>
+        </div>
       </div>
     );
 }

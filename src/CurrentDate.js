@@ -1,7 +1,8 @@
 import React from "react";
+import "./CurrentData.css";
 
 export default function CurrentDate(props) {
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = ["Sunday", "Monday", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let months = [
     "Jan",
     "Feb",
@@ -22,7 +23,7 @@ export default function CurrentDate(props) {
 
   return (
     <div className="CurrentDate">
-      {day} {date} {month}
+      {day}, {date} {month}
     </div>
   );
 }

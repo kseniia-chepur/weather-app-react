@@ -1,5 +1,19 @@
-.App {
-  max-width: 600px;
-  margin: 0 auto;
+:root {
+  --primary-color: #4b739c;
+  --accent-color: #a56cc1;
+}
+
+.App .app-wrapper {
+  max-width: 750px;
+  margin: 40px auto;
   text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 12px;
+  background: rgb(161, 196, 253);
+  background: linear-gradient(
+    0deg,
+    rgba(161, 196, 253, 0.6283555658591562) 30%,
+    rgba(194, 233, 251, 1) 86%
+  );
+  color: var(--primary-color);
 }
