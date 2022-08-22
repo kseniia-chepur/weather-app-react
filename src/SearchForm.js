@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./SearchForm.css";
 import CurrentWeather from "./CurrentWeather";
+import DailyForecast from "./DailyForecast";
 
 export default function SearchForm(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -12,6 +13,8 @@ export default function SearchForm(props) {
     setWeatherData({
       status: true,
       city: response.data.name,
+      lat: response.data.coord.lat,
+      lon: response.data.coord.lon,
       date: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
@@ -60,6 +63,7 @@ export default function SearchForm(props) {
           </div>
         </form>
         <CurrentWeather data={weatherData} />
+        <DailyForecast coords={weatherData}/>
       </div>
     );
   else searchByCity();

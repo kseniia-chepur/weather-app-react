@@ -2,7 +2,7 @@ import React from "react";
 import "./CurrentData.css";
 
 export default function CurrentDate(props) {
-  let days = ["Sunday", "Monday", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let months = [
     "Jan",
     "Feb",
