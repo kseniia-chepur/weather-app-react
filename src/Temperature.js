@@ -24,7 +24,7 @@ export default function Temperature(props) {
   if (unit === "celsius")
     return (
       <div className="Temperature">
-        <div className="mt-2">
+        <div>
           <span className="current-value">{props.celsius}</span>
           <span className="units">
             °C |
@@ -42,7 +42,7 @@ export default function Temperature(props) {
   else
     return (
       <div className="Temperature">
-        <div className="mt-2">
+        <div>
           <span className="current-value">{convertToFahrenheit()}</span>
           <span className="units">
             °

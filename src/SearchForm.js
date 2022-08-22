@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./SearchForm.css";
 import CurrentWeather from "./CurrentWeather";
-import DailyForecast from "./DailyForecast";
+import DailyForecast from "./Forecast";
 
 export default function SearchForm(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -63,7 +63,7 @@ export default function SearchForm(props) {
           </div>
         </form>
         <CurrentWeather data={weatherData} />
-        <DailyForecast coords={weatherData}/>
+        <DailyForecast lon={weatherData.lon} lat={weatherData.lat}/>
       </div>
     );
   else searchByCity();

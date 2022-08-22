@@ -1,12 +1,12 @@
-.DailyForecast .daily-values {
+.Forecast .daily-values {
   font-weight: bold;
 }
 
-.DailyForecast .min-temp {
+.Forecast .min-temp {
   margin-left: 10px;
   opacity: 0.6;
 }
 
-.DailyForecast img {
+.Forecast img {
   max-width: 42px;
 }

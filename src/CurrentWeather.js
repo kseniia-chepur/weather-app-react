@@ -8,7 +8,7 @@ import HorizonEvents from "./HorizonEvents";
 export default function CurrentWeather(props) {
   return (
     <div className="CurrentWeather">
-      <div className="row">
+      <div className="row mt-3">
         <div className="col-4">
           <h1 className="city">{props.data.city}</h1>
           <CurrentDate date={props.data.date} />
@@ -20,17 +20,19 @@ export default function CurrentWeather(props) {
           />
           <ul>
             <li className="text-capitalize">{props.data.description}</li>
+          </ul>
+        </div>
+        <div className="col-4">
+          <ul>
             <li>
               <i class="fa-solid fa-droplet"></i>
-              <span className="humidity">  {props.data.humidity}%</span>
+              <span className="humidity"> {props.data.humidity}%</span>
             </li>
             <li>
               <i class="fa-solid fa-wind"></i>
               <span className="wind"> {props.data.wind} km/h</span>
             </li>
           </ul>
-        </div>
-        <div className="col-4">
           <HorizonEvents
             sunrise={props.data.sunrise}
             sunset={props.data.sunset}
