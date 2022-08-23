@@ -20,3 +20,11 @@
   font-weight: bold;
   line-height: 16px;
 }
+
+@media (max-width: 576px) {
+  .CurrentWeather .weather-data {
+    margin: 0 !important;
+   
+  }
+  
+}

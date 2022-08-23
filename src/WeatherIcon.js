@@ -11,8 +11,6 @@ import partlyCloudyNightSnow from "@bybas/weather-icons/design/fill/animation-re
 import thunderstorms from "@bybas/weather-icons/design/fill/animation-ready/thunderstorms.svg";
 import mist from "@bybas/weather-icons/design/fill/animation-ready/mist.svg";
 
-import "./WeatherIcon.css";
-
 export default function WeatherIcon(props) {
   const weatherIconCodes = {
     "01d": clearDay,

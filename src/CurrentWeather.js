@@ -7,15 +7,15 @@ import WeatherIcon from "./WeatherIcon";
 export default function CurrentWeather(props) {
   return (
     <div className="CurrentWeather">
-      <div className="row my-5">
-        <div className="col-4">
+      <div className="row my-5 weather-data">
+        <div className="col-sm-4">
           <h1>{props.data.city}</h1>
           <CurrentDate date={props.data.date} />
         </div>
-        <div className="col-3">
+        <div className="col-sm-3">
           <Temperature celsius={props.data.temperature} />
         </div>
-        <div className="col-2 mt-2">
+        <div className="col-sm-2 mt-2">
           <ul>
             <li>
               <i class="fa-solid fa-droplet"></i>
@@ -29,7 +29,7 @@ export default function CurrentWeather(props) {
             <li>Feels like {props.data.feelsLike}°</li>
           </ul>
         </div>
-        <div className="col-3 weather-icon">
+        <div className="col-sm-3 weather-icon">
           <WeatherIcon code={props.data.icon} alt={props.data.description} />
         </div>
       </div>

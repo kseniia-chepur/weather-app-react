@@ -56,8 +56,8 @@ export default function SearchForm(props) {
     return (
       <div className="SearchForm">
         <form className="form-group mt-3 p-4" onSubmit={handleSubmit}>
-          <div className="row">
-            <div className="col-8">
+          <div className="row ps-5 search">
+            <div className="col-sm-8">
               <input
                 type="search"
                 className="form-control"
@@ -67,14 +67,14 @@ export default function SearchForm(props) {
                 onChange={saveInput}
               />
             </div>
-            <div className="col-2">
+            <div className="col-sm-2">
               <input
                 type="submit"
                 className="btn search-btn w-100 shadow-sm"
                 value="Search"
               />
             </div>
-            <div className="col-1">
+            <div className="col-sm">
               <button
                 className="btn location-btn"
                 onClick={getGeolocationCoords}
