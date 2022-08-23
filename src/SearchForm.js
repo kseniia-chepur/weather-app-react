@@ -74,12 +74,12 @@ export default function SearchForm(props) {
                 value="Search"
               />
             </div>
-            <div className="col-2">
+            <div className="col-1">
               <button
-                className="btn location-btn w-100 shadow-sm"
+                className="btn location-btn"
                 onClick={getGeolocationCoords}
               >
-                <i class="fa-solid fa-location-dot"></i>
+                <i class="fa-solid fa-location-dot fa-2xl"></i>
               </button>
             </div>
           </div>
