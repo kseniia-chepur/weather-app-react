@@ -79,8 +79,7 @@ export default function SearchForm(props) {
                 className="btn location-btn w-100 shadow-sm"
                 onClick={getGeolocationCoords}
               >
-                {" "}
-                Location
+                <i class="fa-solid fa-location-dot"></i>
               </button>
             </div>
           </div>
