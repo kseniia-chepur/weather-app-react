@@ -17,7 +17,7 @@ export default function HorizonEvents(props) {
   minutesSunset = minutesSunset < 10 ? `0${minutesSunset}`: minutesSunset;
 
   return (
-    <ul className="mt-2">
+    <ul className=" HorizonEvents">
       <li>
         <img className="values-icon" src={sunrise} alt="sunrize icon" />
         <span>

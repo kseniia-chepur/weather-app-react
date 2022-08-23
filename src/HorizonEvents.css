@@ -1,3 +1,8 @@
 .HorizonEvents ul li span {
   font-weight: bold;
 }
+
+.HorizonEvents .values-icon {
+  max-width: 40px;
+  line-height: 10px;
+}

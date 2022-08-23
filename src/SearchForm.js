@@ -3,6 +3,7 @@ import axios from "axios";
 import "./SearchForm.css";
 import CurrentWeather from "./CurrentWeather";
 import DailyForecast from "./Forecast";
+import Geolocation from "./Geolocation";
 
 export default function SearchForm(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -20,7 +21,7 @@ export default function SearchForm(props) {
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
-      realFeels: Math.round(response.data.main.feels_like),
+      feelsLike: Math.round(response.data.main.feels_like),
       icon: response.data.weather[0].icon,
       sunrise: new Date(response.data.sys.sunrise * 1000),
       sunset: new Date(response.data.sys.sunset * 1000),
@@ -47,7 +48,7 @@ export default function SearchForm(props) {
       <div className="SearchForm">
         <form className="form-group mt-3 p-4" onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-9">
+            <div className="col-8">
               <input
                 type="search"
                 className="form-control"
@@ -57,13 +58,20 @@ export default function SearchForm(props) {
                 onChange={saveInput}
               />
             </div>
-            <div className="col-3">
-              <input type="submit" className="btn search-btn w-100 shadow-sm" value="Search" />
+            <div className="col-2">
+              <input
+                type="submit"
+                className="btn search-btn w-100 shadow-sm"
+                value="Search"
+              />
+            </div>
+            <div className="col-2">
+              <Geolocation />
             </div>
           </div>
         </form>
         <CurrentWeather data={weatherData} />
-        <DailyForecast lon={weatherData.lon} lat={weatherData.lat}/>
+        <DailyForecast lon={weatherData.lon} lat={weatherData.lat} />
       </div>
     );
   else searchByCity();

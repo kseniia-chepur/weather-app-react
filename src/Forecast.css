@@ -2,11 +2,6 @@
   font-weight: bold;
 }
 
-.Forecast .min-temp {
-  margin-left: 10px;
-  opacity: 0.6;
-}
-
 .Forecast img {
   max-width: 42px;
 }

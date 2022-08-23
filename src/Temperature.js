@@ -17,10 +17,7 @@ export default function Temperature(props) {
   function convertToFahrenheit() {
     return Math.round((props.celsius * 9) / 5 + 32);
   }
-  function convertToFahrenheitRealFeels() {
-    return Math.round((props.realFeels * 9) / 5 + 32);
-  }
-
+  
   if (unit === "celsius")
     return (
       <div className="Temperature">
@@ -33,9 +30,6 @@ export default function Temperature(props) {
               F
             </a>
           </span>
-        </div>
-        <div className="mt-4">
-          Feels like <strong>{props.realFeels}°</strong>
         </div>
       </div>
     );
@@ -51,9 +45,6 @@ export default function Temperature(props) {
             </a>{" "}
             | F
           </span>
-        </div>
-        <div className="mt-4">
-          Feels like <strong>{convertToFahrenheitRealFeels()}°</strong>
         </div>
       </div>
     );

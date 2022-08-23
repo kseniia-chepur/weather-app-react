@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Forecast.css";
-import OneDayForecast from "./OneDayForecast";
+import DailyForecast from "./DailyForecast";
 
 export default function Forecast(props) {
   const [loadingStatus, setLoadingStatus] = useState(false);
@@ -21,19 +21,25 @@ export default function Forecast(props) {
 
   if (loadingStatus) {
     return (
-      <div className="DailyForecast">
-        <div className="row pb-4">
-          {forecast.map(function (dailyForecast, index) {
-            if (index < 7) {
-              return <OneDayForecast data={dailyForecast} key={index} />;
-            } else {
-              return null;
-            }
-          })}
+      <div className="Forecast">
+        <div className="row pb-3">
+          
+            {forecast.map(function (dailyForecast, index) {
+              if (index > 0 & index < 7) {
+                return (
+                  <div className="col">
+                    <DailyForecast data={dailyForecast} key={index} />
+                  </div>
+                );
+              } else {
+                return null;
+              }
+            })}
 
-          {/* <div className="col daily-values">
+            {/* <div className="col daily-values">
            
           </div> */}
+        
         </div>
       </div>
     );

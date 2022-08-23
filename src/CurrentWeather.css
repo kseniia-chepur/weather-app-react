@@ -1,8 +1,13 @@
 .CurrentWeather h1 {
-  font-size: 50px;
-  font-weight: normal;
+  font-size: 42px;
   line-height: 1;
-  margin: 0;  
+  margin: 6px 0 0;
+}
+
+.CurrentWeather .weather-icon img {
+  position: relative;
+  top: -30px;
+  max-width: 130px;
 }
 
 .CurrentWeather ul {
@@ -10,20 +15,8 @@
   padding: 0;
 }
 
-.CurrentWeather .values-icon {
-  max-width: 40px;
-
-}
-
-.CurrentWeather .humidity {
-  line-height: 2;
-}
-
-.CurrentWeather .wind {
-  line-height: 1;
-  
-}
-
-.CurrentWeather img {
-  max-width: 150px;
+.CurrentWeather ul li {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
 }

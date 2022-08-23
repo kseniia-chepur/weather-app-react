@@ -1,12 +1,15 @@
-
 .Temperature .current-value {
   font-size: 80px;
   line-height: 1;
 }
 
+.Temperature .FeelsLike {
+  font-size: 12px;
+}
+
 .Temperature .units {
   position: relative;
-  top: -44px;
+  top: -38px;
 }
 
 .Temperature .units a {

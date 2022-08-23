@@ -1,13 +1,13 @@
-.Footer {
-  font-size: 14px;
-  font-style: italic;
-
+.Footer {  
   color: var(--primary-color);
+  font-size: 12px;
+  font-style: italic;
+  margin: 0;
 }
 
 .Footer a, .Footer a:hover {
   color: var(--accent-color);
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;  
 }
 
