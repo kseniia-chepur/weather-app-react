@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { ThreeDots } from "react-loading-icons";
 import "./SearchForm.css";
 import CurrentWeather from "./CurrentWeather";
 import DailyForecast from "./Forecast";
-import Geolocation from "./Geolocation";
 
 export default function SearchForm(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ status: false });
 
   function getWeatherForecast(response) {
-    console.log(response.data);
     setWeatherData({
       status: true,
       city: response.data.name,
@@ -43,6 +42,16 @@ export default function SearchForm(props) {
     setCity(event.target.value);
   }
 
+  function getGeolocationCoords(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition((coords) => {
+      const key = "9f2e2f52f885114eaafb1054b63cf92c";
+      let units = "metric";
+      let url = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.coords.latitude}&lon=${coords.coords.longitude}&appid=${key}&units=${units}`;
+      axios.get(url).then(getWeatherForecast);
+    });
+  }
+
   if (weatherData.status)
     return (
       <div className="SearchForm">
@@ -66,7 +75,13 @@ export default function SearchForm(props) {
               />
             </div>
             <div className="col-2">
-              <Geolocation />
+              <button
+                className="btn location-btn w-100 shadow-sm"
+                onClick={getGeolocationCoords}
+              >
+                {" "}
+                Location
+              </button>
             </div>
           </div>
         </form>
@@ -75,5 +90,10 @@ export default function SearchForm(props) {
       </div>
     );
   else searchByCity();
-  return "Loading...";
+  return (
+    <div className="py-5">
+      <ThreeDots fill="var(--accent-color)" fillOpacity={0.125} speed={0.5} />
+      <p className="mt-3">Loading...</p>
+    </div>
+  );
 }
