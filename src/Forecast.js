@@ -44,9 +44,11 @@ export default function Forecast(props) {
     );
   } else {
     searchByCoords();
-    <div className="py-5">
-      <ThreeDots fill="var(--accent-color)" fillOpacity={0.125} speed={0.5} />
-      <p className="mt-3">Loading...</p>
-    </div>;
+    return (
+      <div className="py-5">
+        <ThreeDots fill="var(--accent-color)" fillOpacity={0.125} speed={0.5} />
+        <p className="mt-3">Loading...</p>
+      </div>
+    );
   }
 }

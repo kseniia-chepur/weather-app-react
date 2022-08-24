@@ -1,28 +1,19 @@
 .Temperature .current-value {
-  font-size: 80px;
+  font-size: 78px;
   line-height: 1;
 }
 
-.Temperature .FeelsLike {
-  font-size: 12px;
-}
-
 .Temperature .units {
+  font-size: 16px;
   position: relative;
   top: -38px;
 }
 
-.Temperature .units a {
-  text-decoration: none;
-}
-
-@media(max-width: 567px) {
+@media (max-width: 567px) {
   .Temperature .current-value {
-  font-size: 50px; 
-}
-
-.Temperature .units {
-   top: -22px;
-}
-  
+    font-size: 50px;
+  }
+  .Temperature .units {
+    top: -22px;
+  }
 }

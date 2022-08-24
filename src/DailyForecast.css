@@ -3,10 +3,6 @@
   font-weight: bold; 
 }
 
-.DailyForecast img {
-  max-width: 40px;
-}
-
 .DailyForecast .min-temp {
   opacity: 0.6;
 }

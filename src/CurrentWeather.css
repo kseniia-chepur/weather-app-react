@@ -6,8 +6,7 @@
 
 .CurrentWeather .weather-icon img {
   position: relative;
-  top: -30px;
-  max-width: 130px;
+  top: -28px;
 }
 
 .CurrentWeather ul {
@@ -23,8 +22,9 @@
 
 @media (max-width: 576px) {
   .CurrentWeather .weather-data {
-    margin: 0 !important;
-   
+    margin: 20px auto !important;
   }
-  
+  .CurrentWeather .weather-icon img {
+    top: 0;
+  }
 }

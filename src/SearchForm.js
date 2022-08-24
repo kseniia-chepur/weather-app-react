@@ -3,15 +3,15 @@ import axios from "axios";
 import { ThreeDots } from "react-loading-icons";
 import "./SearchForm.css";
 import CurrentWeather from "./CurrentWeather";
-import DailyForecast from "./Forecast";
+import Forecast from "./Forecast";
 
 export default function SearchForm(props) {
   const [city, setCity] = useState(props.defaultCity);
-  const [weatherData, setWeatherData] = useState({ status: false });
+  const [weatherData, setWeatherData] = useState({ loadingStatus: false });
 
   function getWeatherForecast(response) {
     setWeatherData({
-      status: true,
+      loadingStatus: true,
       city: response.data.name,
       lat: response.data.coord.lat,
       lon: response.data.coord.lon,
@@ -22,8 +22,6 @@ export default function SearchForm(props) {
       wind: Math.round(response.data.wind.speed),
       feelsLike: Math.round(response.data.main.feels_like),
       icon: response.data.weather[0].icon,
-      sunrise: new Date(response.data.sys.sunrise * 1000),
-      sunset: new Date(response.data.sys.sunset * 1000),
     });
   }
   function searchByCity() {
@@ -44,20 +42,20 @@ export default function SearchForm(props) {
 
   function getGeolocationCoords(event) {
     event.preventDefault();
-    navigator.geolocation.getCurrentPosition((coords) => {
+    navigator.geolocation.getCurrentPosition((position) => {
       const key = "9f2e2f52f885114eaafb1054b63cf92c";
       let units = "metric";
-      let url = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.coords.latitude}&lon=${coords.coords.longitude}&appid=${key}&units=${units}`;
+      let url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${key}&units=${units}`;
       axios.get(url).then(getWeatherForecast);
     });
   }
-
-  if (weatherData.status)
+ 
+  if (weatherData.loadingStatus)
     return (
       <div className="SearchForm">
         <form className="form-group mt-3 p-4" onSubmit={handleSubmit}>
-          <div className="row ps-5 search">
-            <div className="col-sm-8">
+          <div className="row">
+            <div className="col-sm-7">
               <input
                 type="search"
                 className="form-control"
@@ -67,25 +65,25 @@ export default function SearchForm(props) {
                 onChange={saveInput}
               />
             </div>
-            <div className="col-sm-2">
+            <div className="col-sm-3">
               <input
                 type="submit"
                 className="btn search-btn w-100 shadow-sm"
                 value="Search"
               />
             </div>
-            <div className="col-sm">
+            <div className="col-sm-2">
               <button
                 className="btn location-btn"
                 onClick={getGeolocationCoords}
               >
-                <i class="fa-solid fa-location-dot fa-2xl"></i>
+                <i className="fa-solid fa-location-dot fa-2xl"></i>
               </button>
             </div>
           </div>
         </form>
         <CurrentWeather data={weatherData} />
-        <DailyForecast lon={weatherData.lon} lat={weatherData.lat} />
+        <Forecast lon={weatherData.lon} lat={weatherData.lat} />
       </div>
     );
   else searchByCity();

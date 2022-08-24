@@ -18,7 +18,7 @@ export default function CurrentWeather(props) {
         <div className="col-sm-2 mt-2">
           <ul>
             <li>
-              <i class="fa-solid fa-droplet"></i>
+              <i className="fa-solid fa-droplet"></i>
               <span className="humidity"> {props.data.humidity}%</span>
             </li>
             <li>
@@ -30,7 +30,11 @@ export default function CurrentWeather(props) {
           </ul>
         </div>
         <div className="col-sm-3 weather-icon">
-          <WeatherIcon code={props.data.icon} alt={props.data.description} />
+          <WeatherIcon
+            code={props.data.icon}
+            alt={props.data.description}
+            width={130}
+          />
         </div>
       </div>
     </div>
