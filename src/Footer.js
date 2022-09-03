@@ -3,7 +3,7 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer className="Footer mt-3 text-center">
+    <footer className="Footer mt-4 text-center">
       <a
         href="https://github.com/kseniia-chepur/weather-app-react"
         target="_blank"
