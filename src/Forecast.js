@@ -31,8 +31,8 @@ export default function Forecast(props) {
           {forecast.map(function (dailyForecast, index) {
             if ((index > 0) & (index < 6)) {
               return (
-                <div className="col">
-                  <DailyForecast data={dailyForecast} key={index} />
+                <div className="col" key={index}>
+                  <DailyForecast data={dailyForecast} />
                 </div>
               );
             } else {

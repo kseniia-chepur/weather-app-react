@@ -22,7 +22,7 @@ export default function CurrentWeather(props) {
               <span className="humidity"> {props.data.humidity}%</span>
             </li>
             <li>
-              <i class="fa-solid fa-wind"></i>
+              <i className="fa-solid fa-wind"></i>
               <span className="wind"> {props.data.wind} km/h</span>
             </li>
             <li className="text-capitalize">{props.data.description}</li>
