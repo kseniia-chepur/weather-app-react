@@ -5,4 +5,4 @@ Created during [SheCodes workshop](https://www.shecodes.io)
 - Forecast based on geolocation
 
 
-### [DEMO](https://cool-starlight-344e94.netlify.app/)
+### [DEMO](https://weatherforecast3.netlify.app/)

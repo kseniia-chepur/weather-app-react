@@ -14,8 +14,8 @@ export default function Forecast(props) {
 
   function searchByCoords() {
     let units = "metric";
-    const apiKey = "9f2e2f52f885114eaafb1054b63cf92c";
-    let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.lat}&lon=${props.lon}&appid=${apiKey}&units=${units}`;
+    const apiKey = process.env.REACT_APP_API_KEY;
+    let url = `https://api.openweathermap.org/data/3.0/onecall?lat=${props.lat}&lon=${props.lon}&appid=${apiKey}&units=${units}`;
     axios.get(url).then(getDailyForecast);
   }
 
