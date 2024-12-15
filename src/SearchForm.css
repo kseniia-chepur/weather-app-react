@@ -17,14 +17,15 @@
 }
 
 @media (max-width: 567px) {
-  .SearchForm .search-btn {
-    margin-top: 20px;
-    max-width: 100px;
+  .SearchForm {
+    height: 100vh;
   }
-  .SearchForm .location-btn {
-    margin-top: 20px;
-  } 
+  .SearchForm .search-btn {
+    font-size: 12px;
+    padding: 8px 0;
+  }
   .SearchForm .form-group {
     margin: 0 !important;
+    padding-bottom: 0 !important;
   }
 }
